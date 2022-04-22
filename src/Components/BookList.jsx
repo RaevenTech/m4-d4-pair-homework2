@@ -27,7 +27,7 @@ class BookList extends React.Component{
       </Row> 
       <Row>    
         {this.props.books.filter(book => book.title.toLowerCase().includes(this.state.searchQuery)).map((book) => (         
-         <SingleBook book={book}  />        
+         <SingleBook  book={book}  />        
         ))}
       </Row>
     </Container>    

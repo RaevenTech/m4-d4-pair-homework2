@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+
+import { Card, Col, } from "react-bootstrap";
+
 
 
 class SingleBook extends React.Component { 
@@ -10,9 +12,11 @@ class SingleBook extends React.Component {
 
   render() {
     return(
+      
     <Col md={3}>
-    <Card key={this.props.book.asin} onClick={() => this.setState({selected:!this.state.selected})}
-    style={{border: this.state.selected? "1px solid blue":"none"}}>
+    <Card  onClick={() => this.setState({selected:!this.state.selected})}
+    style={{border: this.state.selected? "1px solid blue":"none"}}
+    key={this.props.book.asin}>
       <Card.Img variant="top" src={this.props.book.img} style={{ height: 300 }} />
       <Card.Body>
         <Card.Text
@@ -24,11 +28,15 @@ class SingleBook extends React.Component {
         >
           {this.props.book.title}
         </Card.Text>
+    
 
     
       </Card.Body>
+      
     </Card>
+
   </Col>
+  
     )
   }
 }
