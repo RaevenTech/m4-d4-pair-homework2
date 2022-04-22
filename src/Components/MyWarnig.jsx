@@ -1,10 +1,11 @@
 import { Alert } from "react-bootstrap"
 
 const MyWarnig = (props) => (
-    
-   <Alert variant="danger">
+    <div className="">
+   <Alert className="" variant="danger">
   <Alert.Heading>{props.text}</Alert.Heading>
 </Alert>
+</div>
     
 )
 export default MyWarnig
