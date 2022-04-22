@@ -9,21 +9,25 @@ class BookList extends React.Component{
     searchQuery: "",
   }
 
-
   render(){
   return(  
   <Container>
     <Row>
       <Col>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Search</Form.Label>
-    <Form.Control type="text" placeholder="Search" />
+    <Form.Label> Search</Form.Label>
+    <Form.Control 
+    type="text" 
+    placeholder="Search"
+    value={this.state.searchQuery}
+    onChange={(e) => this.setState({searchQuery: e.target.value})}
+     />
   </Form.Group>
       </Col>
       </Row> 
       <Row>    
-        {this.props.books.map((item) => (         
-         <SingleBook book={item}  />        
+        {this.props.books.filter(book => book.title.toLowerCase().includes(this.state.searchQuery)).map((book) => (         
+         <SingleBook book={book}  />        
         ))}
       </Row>
     </Container>    

@@ -1,11 +1,19 @@
-
+import React from "react";
 import { Card, Col } from "react-bootstrap";
 
 
-const SingleBook = ({book}) => (
+class SingleBook extends React.Component { 
+  state = {
+    selected: false,
+  }
+
+
+  render() {
+    return(
     <Col md={3}>
-    <Card key={book.asin}>
-      <Card.Img variant="top" src={book.img} style={{ height: 300 }} />
+    <Card key={this.props.book.asin} onClick={() => this.setState({selected:!this.state.selected})}
+    style={{border: this.state.selected? "1px solid blue":"none"}}>
+      <Card.Img variant="top" src={this.props.book.img} style={{ height: 300 }} />
       <Card.Body>
         <Card.Text
           style={{
@@ -14,13 +22,15 @@ const SingleBook = ({book}) => (
             textOverflow: "ellipsis",
           }}
         >
-          {book.title}
+          {this.props.book.title}
         </Card.Text>
 
     
       </Card.Body>
     </Card>
   </Col>
-)
+    )
+  }
+}
 
 export default SingleBook
