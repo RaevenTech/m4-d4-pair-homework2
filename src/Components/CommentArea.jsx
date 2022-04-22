@@ -3,8 +3,7 @@ import {  Row, Col, Form } from 'react-bootstrap'
 
 
 
-function CommentArea() {
-  return (
+const CommentArea = () =>  (
 
 <div>
     
@@ -17,6 +16,6 @@ function CommentArea() {
   </div>
     )
 
-}
+
 
 export default CommentArea
