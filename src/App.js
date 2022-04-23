@@ -7,20 +7,18 @@ import BookList from "./Components/BookList.jsx";
 import SingleBook from "./Components/SingleBook";
 
 import { Container, Col, Row } from "react-bootstrap";
-import CommentArea from "./Components/CommentArea";
 
 function App() {
     return (
         <>
-            <MyWarnig text="This is a Warning!" />
-            <MyBadge color="info" BadgeText="NEW!" />
             <Container>
                 <Row>
-                    <Col>
+                    <Col className="d-flex flex-column justify-content-center align-items-center">
+                        <MyWarnig text="This is a Warning!" />
+                        <MyBadge color="info" BadgeText="NEW!" />
                         <SingleBook book={fantasyBooks[0]} />
                     </Col>
                 </Row>
-                <CommentArea />
             </Container>
 
             <BookList books={fantasyBooks} />

@@ -1,13 +1,17 @@
-import React from 'react'
+import SingleComment from "./SingleComment"
+import { ListGroup } from "react-bootstrap"
 
-function CommentsList() {
-  return (
-    <div>
-        <ListGroup>
-    <ListGroup.Item>AddComment</ListGroup.Item>
-    </ListGroup>
-    </div>
-  )
-}
+const CommentsList = ({ commentsRecived }) => (
+  <>
+  <ListGroup >
+      {
+          commentsRecived.map(comment => (
+              <SingleComment comment={comment} key={comment._id} />
+          ))
+      }
+  </ListGroup>
+  </>
+)  
+
 
 export default CommentsList
